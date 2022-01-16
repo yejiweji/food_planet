@@ -4,12 +4,12 @@
 
 A food planner app built with [React](https://github.com/facebook/create-react-app), [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview), [Google Calendar API](https://developers.google.com/calendar/api/quickstart/js) and [Food API](https://spoonacular.com/food-api).
 
-## 💫 Live
+## 🍐 Live
 
 Take a look at https://yejiweji.github.io/food_planet.
 
 
-## ✨ Functionalities
+## 🍏 Functionalities
 
 * Search recipes by ingredients in your fridge
 * Search for the best grocery stores for your recipe
@@ -17,7 +17,7 @@ Take a look at https://yejiweji.github.io/food_planet.
 * Plan meals for the day, the week, the month and even for the year, in your calendar
 * Generate a random recipe for your meal
 
-## 👉 Built With
+## 🥦 Built With
  
 * ReactJS
 * React Bootstrap
@@ -25,7 +25,7 @@ Take a look at https://yejiweji.github.io/food_planet.
 * Google Calendar API
 * Food API
 
-## 🧱 Development
+## 🍋 Development
 
 1. Clone the repository and change directory.
 

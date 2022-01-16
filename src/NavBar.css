@@ -8,9 +8,9 @@
   color: #c67fcf;
   font-size: 10vmin;
   margin: auto;
-  height: calc((100vh - 10vh) / 3);
+  height: calc((100vh - 10vh) / 4);
   background: #c9dac9;
-  line-height: calc((100vh - 10vh) / 3);
+  line-height: calc((100vh - 10vh) / 4);
   border-bottom: 5px solid white;
   opacity: 0.6;
 }

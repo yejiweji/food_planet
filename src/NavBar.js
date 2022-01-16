@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { BsCalendar2Check } from "react-icons/bs"
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
-import { RiFridgeLine } from "react-icons/ri";
+import { RiFridgeLine, RiMagicLine } from "react-icons/ri";
 
 import "./NavBar.css";
 
@@ -23,13 +23,16 @@ export default class NavBar extends PureComponent {
 
     switch(event) {
       case "fridge":
-        title = "What's in your fridge?";
+        title = "What's in your fridge? 🔍";
         break;
       case "grocery":
-        title = "What do you need?";
+        title = "What do you need? 🛒";
         break;
-      case  "calendar":
-        title = "What's planned for the week?";
+      case "calendar":
+        title = "What's planned for the week? 🗓";
+        break;
+      case "random":
+        title = "Want to get inspired by 🔮?";
         break;
       default:
         title = "";
@@ -61,6 +64,12 @@ export default class NavBar extends PureComponent {
           onClick={() => this.handleClick("calendar")}
         >
           <BsCalendar2Check />
+        </div>
+        <div
+          className={`nav_card ${cardSelected == 'random' ? 'card_selected' : ''}`}
+          onClick={() => this.handleClick("random")}
+        >
+          <RiMagicLine />
         </div>
       </div>
     );

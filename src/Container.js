@@ -14,7 +14,7 @@ export default class Container extends PureComponent {
 
     return (
       <div className="app_container">
-        <div className="container_title">{title} ¯\_(ツ)_/¯</div>
+        <div className="container_title">{title}</div>
         <Fridge />
       </div>
     );
