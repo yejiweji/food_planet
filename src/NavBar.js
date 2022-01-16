@@ -38,7 +38,7 @@ export default class NavBar extends PureComponent {
         title = "";
     }
 
-    this.props.navChange(title);
+    this.props.navChange([event, title]);
     this.setState({ cardSelected: event });
   };
 
