@@ -9,11 +9,23 @@
   text-transform: uppercase;
 }
 
+.app_header::after {
+  content: "";
+  background: #7e57c2;
+  height: 3.5vmin;
+  width: 3.5vmin;
+  position: absolute;
+  margin-left: -135px;
+  border-radius: 50%;
+}
+
 .app_header p {
   margin: auto 0;
+  text-shadow: -4px 3px #7e57c2;
 }
 
 .app_logo {
+  z-index: 1;
   height: 7vmin;
   pointer-events: none;
   margin: 10px;
@@ -22,7 +34,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .app_logo {
-    animation: app-logo-spin infinite 20s linear;
+    animation: app-logo-spin infinite 10s linear;
   }
 }
 

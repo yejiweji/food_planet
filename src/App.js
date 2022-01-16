@@ -8,7 +8,7 @@ export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      title: "What's in your fridge? ¯\_(ツ)_/¯",
+      title: "What's in your fridge? ¯\\_(ツ)_/¯",
     };
   }
 
