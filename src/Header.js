@@ -6,7 +6,7 @@ function Header() {
   return (
     <header className="app_header">
         <img src={logo} className="app_logo" alt="logo" />
-        <p>Foodie</p>
+        <p>FoodPlanet</p>
     </header>
   );
 }
