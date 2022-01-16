@@ -7,16 +7,28 @@ import "./Fridge.css";
 export default class Fridge extends PureComponent {
   render() {
     return (
-      <InputGroup className="mb-3">
-        <FormControl
-          placeholder="Recipient's username"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
-        />
-        <Button variant="info" id="button-addon2">
-          Button
-        </Button>
-      </InputGroup>
+      <div className="fridge_container">
+        <div className="container_description">
+          Do you ever run out of ideas on what to cook? Tired of the same old routine?
+          Instead of searching based on the dish, let's search based on what you have in the fridge.
+          Type the ingredients you wish to use below, separated by commas:
+        </div>
+        <InputGroup className="mb-3">
+          <FormControl
+            placeholder="Type your ingredients"
+            aria-label="Type your ingredients"
+            aria-describedby="basic-addon2"
+          />
+          <Button
+            variant="outline-info"
+            id="button-addon2"
+            // onClick={!isLoading ? handleClick : null}
+          >
+            {/* {isLoading ? 'Loading…' : 'Go find'} */}
+            Go find
+          </Button>
+        </InputGroup>
+      </div>
     );
   }
 }

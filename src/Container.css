@@ -1,9 +1,9 @@
 .app_container {
   width: calc(100vw - 15vw);
-  padding: 30px;
+  padding: 30px 50px;
 }
 
-.page_title {
+.container_title {
   width: 100%;
   margin-bottom: 30px;
   text-align: center;
@@ -13,4 +13,11 @@
   color: #f48fb1;
   text-shadow: -4px 4px #7e57c2,
                -8px 8px #26c6da;
+}
+
+.container_description {
+  text-align: center;
+  margin: 20px auto;
+  font-weight: 500;
+  color: grey;
 }

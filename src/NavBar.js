@@ -23,13 +23,13 @@ export default class NavBar extends PureComponent {
 
     switch(event) {
       case "fridge":
-        title = "What's in your fridge? ¯\\_(ツ)_/¯";
+        title = "What's in your fridge?";
         break;
       case "grocery":
-        title = "What do you need? ¯\\_(ツ)_/¯";
+        title = "What do you need?";
         break;
       case  "calendar":
-        title = "What's planned for the week? ¯\\_(ツ)_/¯";
+        title = "What's planned for the week?";
         break;
       default:
         title = "";

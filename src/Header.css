@@ -22,6 +22,7 @@
 .app_header p {
   margin: auto 0;
   text-shadow: -4px 3px #7e57c2;
+  font-weight: 700;
 }
 
 .app_logo {
