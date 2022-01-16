@@ -1,0 +1,29 @@
+.app_navbar {
+  width: 15vw;
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav_card {
+  color: #c67fcf;
+  font-size: 10vmin;
+  margin: auto;
+  height: calc((100vh - 10vh) / 3);
+  background: #c9dac9;
+  line-height: calc((100vh - 10vh) / 3);
+  border-bottom: 5px solid white;
+  opacity: 0.6;
+}
+
+.nav_card:hover {
+  opacity: 1;
+}
+
+.card_selected {
+  color: white;
+  background: #E8DEEE;
+}
+
+.nav_card svg {
+  vertical-align: middle;
+}

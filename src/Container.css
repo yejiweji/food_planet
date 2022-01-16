@@ -1,0 +1,10 @@
+.app_container {
+  width: calc(100vw - 15vw);
+}
+
+.page_title {
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 3vmin;
+}
