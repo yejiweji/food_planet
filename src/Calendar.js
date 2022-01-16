@@ -11,7 +11,7 @@ export default class Calendar extends PureComponent {
       <div className="calendar_container">
         <div className="container_description">
           Do you wish you had a better plan for the day, the week, the month and even for this year?
-          Are you tired of trying to meal plan all in your brain?
+          Are you tired of trying to meal plan all in your 🧠?
           Instead of worrying about what to cook every meal, let's plan what to eat in advance.
           Use the calendar below to add what you'll be eating at each meal:
         </div>
