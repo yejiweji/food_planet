@@ -1,5 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
+import Fridge from "./Fridge";
+
 import "./Container.css";
 
 export default class Container extends PureComponent {
@@ -13,6 +15,7 @@ export default class Container extends PureComponent {
     return (
       <div className="app_container">
         <div className="page_title">{title}</div>
+        <Fridge />
       </div>
     );
   }

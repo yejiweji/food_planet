@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
-import './App.css';
+import Container from "./Container";
 import Header from "./Header";
 import NavBar from "./NavBar";
-import Container from "./Container";
+import './App.css';
 
 export default class App extends PureComponent {
   constructor(props) {
