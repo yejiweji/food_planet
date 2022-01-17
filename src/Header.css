@@ -9,14 +9,18 @@
   text-transform: uppercase;
 }
 
-.app_header::after {
+.app_logo {
+  margin: 10px;
+}
+
+.logo_center {
   content: "";
   background: #7e57c2;
   height: 3.5vmin;
   width: 3.5vmin;
-  position: absolute;
-  margin-left: -240px;
   border-radius: 50%;
+  position: absolute;
+  margin: 1.5vmin;
 }
 
 .app_header p {
@@ -25,21 +29,20 @@
   font-weight: 700;
 }
 
-.app_logo {
+.logo_icon {
   z-index: 1;
   height: 7vmin;
   pointer-events: none;
-  margin: 10px;
   filter: brightness(100);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .app_logo {
-    animation: app-logo-spin infinite 10s linear;
+  .logo_icon {
+    animation: icon_spin infinite 10s linear;
   }
 }
 
-@keyframes app-logo-spin {
+@keyframes icon_spin {
   from {
     transform: rotate(0deg);
   }

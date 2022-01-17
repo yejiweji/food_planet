@@ -5,7 +5,10 @@ import "./Header.css";
 function Header() {
   return (
     <header className="app_header">
-        <img src={logo} className="app_logo" alt="logo" />
+        <div className="app_logo">
+          <div className="logo_center"></div>
+          <img src={logo} className="logo_icon" alt="logo" />
+        </div>
         <p>FoodPlanet</p>
     </header>
   );

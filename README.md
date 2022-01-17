@@ -2,7 +2,7 @@
 
 ## 🥑 About
 
-A food planner app built with [React](https://github.com/facebook/create-react-app), [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview), [Google Calendar API](https://developers.google.com/calendar/api/quickstart/js) and [Food API](https://spoonacular.com/food-api).
+A food planner app built with [React](https://github.com/facebook/create-react-app), [Google Maps API](https://developers.google.com/maps/documentation/javascript/overview), [React Big Calendar](https://jquense.github.io/react-big-calendar/examples/index.html) and [Food API](https://spoonacular.com/food-api).
 
 ## 🍐 Live
 
@@ -22,7 +22,7 @@ Take a look at https://yejiweji.github.io/food_planet.
 * ReactJS
 * React Bootstrap
 * Google Maps API
-* Google Calendar API
+* React Big Calendar
 * Food API
 
 ## 🍋 Development
