@@ -1,3 +1,7 @@
 .mb-3 {
   margin: auto;
 }
+
+.btn {
+  font-weight: 700 !important;
+}

@@ -20,7 +20,7 @@ export default class Fridge extends PureComponent {
             aria-describedby="basic-addon2"
           />
           <Button
-            variant="outline-info"
+            variant="info"
             id="button-addon2"
             // onClick={!isLoading ? handleClick : null}
           >

@@ -32,7 +32,7 @@ export default class NavBar extends PureComponent {
         title = "What's planned for the week? 🗓";
         break;
       case "random":
-        title = "Want to get inspired by 🔮?";
+        title = "Want to get inspired 🔮?";
         break;
       default:
         title = "";

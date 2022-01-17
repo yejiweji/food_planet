@@ -1,8 +1,7 @@
 
 import React, { PureComponent } from "react";
 import Button from 'react-bootstrap/Button';
-import FormControl from 'react-bootstrap/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
+import LoadingGlobe from "./LoadingGlobe";
 import "./Random.css";
 
 export default class Random extends PureComponent {
@@ -17,12 +16,12 @@ export default class Random extends PureComponent {
         <Button
           variant="info"
           id="button-addon2"
-          size="lg"
           // onClick={!isLoading ? handleClick : null}
         >
           {/* {isLoading ? 'Loading…' : 'Get inspired'} */}
           ✨ Get inspired ✨
         </Button>
+        <LoadingGlobe />
       </div>
     );
   }

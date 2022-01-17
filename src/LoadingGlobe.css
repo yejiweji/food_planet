@@ -1,0 +1,29 @@
+.loading_crystal {
+  font-size: 20vmin;
+}
+
+.crystal {
+  background: radial-gradient(circle, rgb(231, 213, 240) 0%, rgb(92, 15, 117) 100%);
+  border-radius: 50%;
+  height: 22vh;
+  width: 22vh;
+  box-shadow: 0 0 10px #9b94a8;
+  animation: glow 3s ease-in-out infinite alternate;
+  margin: 100px auto;
+}
+ 
+@keyframes glow {
+  from {
+    box-shadow: 0 -10px 30px #6bd6e2,
+    0 -5px 25px #a27dc6,
+    0 -5px 30px #ac87d1,
+    0 -5px 35px #6bd6e2;
+    background: radial-gradient(circle, rgb(246, 234, 252) 0%, rgb(78, 211, 235) 100%);
+  }
+  to {
+    box-shadow: 0 -5px 50px #d4f1f4,
+    0 -5px 60px #ac87d1,
+    0 -5px 70px #a27dc6,
+    0 -5px 80px #ab85e7;
+  }
+}
