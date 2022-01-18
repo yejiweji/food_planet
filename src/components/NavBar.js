@@ -48,25 +48,25 @@ export default class NavBar extends PureComponent {
     return (
       <div className="app_navbar">
         <div
-          className={`nav_card ${cardSelected == 'fridge' ? 'card_selected' : ''}`}
+          className={`nav_card ${cardSelected === 'fridge' ? 'card_selected' : ''}`}
           onClick={() => this.handleClick("fridge")}
         >
           <RiFridgeLine />
         </div>
         <div
-          className={`nav_card ${cardSelected == 'grocery' ? 'card_selected' : ''}`}
+          className={`nav_card ${cardSelected === 'grocery' ? 'card_selected' : ''}`}
           onClick={() => this.handleClick("grocery")}
         >
           <MdOutlineLocalGroceryStore />
         </div>
         <div
-          className={`nav_card ${cardSelected == 'calendar' ? 'card_selected' : ''}`}
+          className={`nav_card ${cardSelected === 'calendar' ? 'card_selected' : ''}`}
           onClick={() => this.handleClick("calendar")}
         >
           <BsCalendar2Check />
         </div>
         <div
-          className={`nav_card ${cardSelected == 'random' ? 'card_selected' : ''}`}
+          className={`nav_card ${cardSelected === 'random' ? 'card_selected' : ''}`}
           onClick={() => this.handleClick("random")}
         >
           <RiMagicLine />

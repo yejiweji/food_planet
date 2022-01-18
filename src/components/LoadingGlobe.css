@@ -5,11 +5,12 @@
 .crystal {
   background: radial-gradient(circle, rgb(231, 213, 240) 0%, rgb(92, 15, 117) 100%);
   border-radius: 50%;
-  height: 22vh;
-  width: 22vh;
+  height: 30vh;
+  width: 30vh;
   box-shadow: 0 0 10px #9b94a8;
   animation: glow 3s ease-in-out infinite alternate;
-  margin: 100px auto;
+  margin: 77px auto 0;
+  z-index: 10;
 }
  
 @keyframes glow {

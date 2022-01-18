@@ -19,10 +19,10 @@ export default class Container extends PureComponent {
     return (
       <div className="app_container">
         <div className="container_title">{title}</div>
-        {navCard == "fridge" ? <Fridge /> : null}
-        {navCard == "grocery" ? <Grocery /> : null}
-        {navCard == "calendar" ? <Calendar /> : null}
-        {navCard == "random" ? <Random /> : null}
+        {navCard === "fridge" ? <Fridge /> : null}
+        {navCard === "grocery" ? <Grocery /> : null}
+        {navCard === "calendar" ? <Calendar /> : null}
+        {navCard === "random" ? <Random /> : null}
       </div>
     );
   }

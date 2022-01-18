@@ -1,0 +1,31 @@
+.recipe_card {
+  padding: 30px;
+}
+
+.recipe_card .card {
+  width: 30vw;
+  margin: auto;
+  box-shadow: 0 0 10px #9b94a8;
+  animation: card_glow 3s ease-in-out infinite alternate;
+}
+ 
+@keyframes card_glow {
+  from {
+    box-shadow: 0 -10px 30px #6bd6e2,
+    0 -5px 10px #a27dc6,
+    0 -5px 15px #ac87d1,
+    0 -5px 20px #6bd6e2;
+  }
+  to {
+    box-shadow: 0 -5px 50px #d4f1f4,
+    0 -5px 0px #ac87d1,
+    0 -5px 10px #a27dc6,
+    0 -5px 20px #ab85e7;
+  }
+}
+
+.recipe_card .recipe_description {
+  font-size: 1.2vmin;
+  margin: 10px 0 20px 0;
+  font-weight: 500;
+}

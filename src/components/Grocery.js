@@ -1,4 +1,3 @@
-
 import React, { PureComponent } from "react";
 import "./Grocery.css";
 
@@ -11,6 +10,7 @@ export default class Grocery extends PureComponent {
           Instead of keeping a list in your 🧠, let's plan what to eat in advance.
           Use the calendar below to add what you'll be eating at each meal:
         </div>
+        <div className="map"></div>
       </div>
     );
   }

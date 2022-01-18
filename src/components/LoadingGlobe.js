@@ -6,7 +6,7 @@ export default class LoadingGlobe extends PureComponent {
   render() {
     return (
       <div className="loading_globe">
-        <div class="crystal"></div>
+        <div className="crystal"></div>
       </div>
     );
   }

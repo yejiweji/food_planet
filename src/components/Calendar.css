@@ -1,0 +1,7 @@
+.calendar_container {}
+
+.calendar_wrapper {
+  min-height: 500px;
+  padding: 10px;
+  background: #e1ceec;
+}

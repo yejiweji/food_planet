@@ -1,6 +1,8 @@
 .app_container {
   width: calc(100vw - 15vw);
+  height: calc(100vh - 10vh);
   padding: 30px 50px;
+  overflow: scroll;
 }
 
 .container_title {
