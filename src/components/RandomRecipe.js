@@ -4,9 +4,9 @@ import $ from 'jquery';
 import Button from 'react-bootstrap/Button';
 import LoadingGlobe from "./LoadingGlobe";
 import RecipeCard from "./RecipeCard";
-import "./Recipes.css";
+import "./RandomRecipe.css";
 
-export default class Recipes extends Component {
+export default class RandomRecipe extends Component {
   constructor(props) {
     super(props);
 
@@ -25,7 +25,7 @@ export default class Recipes extends Component {
     const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`;
 
     $.getJSON(url)
-      .done(data => { this.setState({ isLoading: false, recipes: data.recipes })});
+      .done(data => { this.setState({ isLoading: false, recipes: data.recipes }); });
   }
 
   render() {
@@ -34,12 +34,12 @@ export default class Recipes extends Component {
     let cards = null;
     if (recipes) {
       cards = recipes.map((item, i) => (
-        <RecipeCard id={item.id} recipe={item} />
+        <RecipeCard key={item.id} recipe={item} />
       ));
     }
 
     return (
-      <div className="recipes_container">
+      <div className="random_recipe_container">
         <Button
           variant="info"
           id="button-addon2"

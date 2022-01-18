@@ -1,7 +1,6 @@
-.mb-3 {
+.fridge_container .mb-3 {
   margin: auto;
 }
-
-.btn {
-  font-weight: 700 !important;
+.fridge_container .mb-3 textarea {
+  border: 2px solid pink;
 }

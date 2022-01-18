@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import $ from 'jquery';
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -6,12 +7,36 @@ import Card from 'react-bootstrap/Card';
 import "./RecipeCard.css";
 
 export default class RecipeCard extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+    };
+
+    this.handleClick = this.handleDrilldown.bind(this);
+  }
+
   static propTypes = {
     recipe: PropTypes.object,
   };
 
+  handleDrilldown(id) {
+    this.setState({ isLoading: true});
+
+    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
+    const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
+
+    $.getJSON(url)
+      .done(data => {
+        this.setState({ isLoading: false });
+        window.open(data.sourceUrl, "_blank");
+      });
+  }
+
   render() {
     const {
+      id,
       // vegetarian,
       // vegan,
       // glutenFree,
@@ -44,6 +69,7 @@ export default class RecipeCard extends PureComponent {
       // instructions,
       // spoonacularSourceUrl,
     } = this.props.recipe;
+    const { isLoading } = this.state;
 
     return (
       <div className="recipe_card">
@@ -52,7 +78,10 @@ export default class RecipeCard extends PureComponent {
           <Card.Body>
             <Card.Title>{title}</Card.Title>
             <div className="recipe_description" dangerouslySetInnerHTML={{ __html: summary }}></div>
-            <Button variant="outline-info" href={sourceUrl} target="_blank">See recipe</Button>
+            {!sourceUrl ?
+              <Button variant="outline-info" onClick={() => this.handleDrilldown(id)}>{isLoading ? 'Loading...' : 'See recipe'}</Button>
+              : <Button variant="outline-info" href={sourceUrl} target="_blank">See recipe</Button>
+            }
           </Card.Body>
         </Card>
       </div>

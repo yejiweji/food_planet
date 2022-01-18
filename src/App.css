@@ -9,6 +9,10 @@
   display: flex;
 }
 
+.btn {
+  font-weight: 700 !important;
+}
+
 .btn:hover {
   color: white !important;
 }
