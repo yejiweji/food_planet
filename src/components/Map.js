@@ -12,16 +12,16 @@ export default class Map extends PureComponent {
     resultLocations: PropTypes.array,
     showPinDetails: PropTypes.bool,
     pinDetails: PropTypes.object,
-    updateCoordinateState: PropTypes.func,
+    updateParentState: PropTypes.func,
   };
 
   componentDidMount() {
-    const { updateCoordinateState } = this.props;
+    const { updateParentState } = this.props;
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => {
-          updateCoordinateState(prevState => ({
+          updateParentState(prevState => ({
             currentCoords: {
               ...prevState.currentCoords,
               lat: position.coords.latitude,
@@ -34,10 +34,10 @@ export default class Map extends PureComponent {
   }
 
   updateLatLng = e => {
-    const { updateCoordinateState } = this.props;
+    const { updateParentState } = this.props;
 
     if (e.length > 0) {
-      updateCoordinateState({
+      updateParentState({
         resultLocations: e,
         currentCoords: {
           lat: e[0].geometry.location.lat(),
@@ -49,12 +49,12 @@ export default class Map extends PureComponent {
   }
 
   closePinModal = () => {
-    const { updateCoordinateState } = this.props;
-    updateCoordinateState({ showPinDetails: false });
+    const { updateParentState } = this.props;
+    updateParentState({ showPinDetails: false });
   }
 
   render() {
-    const { zoom, currentCoords, resultLocations, showPinDetails, pinDetails, updateCoordinateState } = this.props;
+    const { zoom, currentCoords, resultLocations, showPinDetails, pinDetails, updateParentState } = this.props;
 
     const pins = resultLocations.map(loc => {
       return(
@@ -62,7 +62,7 @@ export default class Map extends PureComponent {
           key={loc.place_id}
           lat={loc.geometry.location.lat()}
           lng={loc.geometry.location.lng()}
-          onClick={() => updateCoordinateState({
+          onClick={() => updateParentState({
             pinDetails: loc,
             showPinDetails: true,
           })}

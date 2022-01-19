@@ -9,7 +9,6 @@ import "./Container.css";
 export default class Container extends PureComponent {
   static propTypes = {
     handleRandomRecipeSearch: PropTypes.func,
-    updateSearchQuery: PropTypes.func,
     handleIngredientRecipesSearch: PropTypes.func,
     navCard: PropTypes.string,
     title: PropTypes.string,
@@ -23,13 +22,12 @@ export default class Container extends PureComponent {
     completeItem: PropTypes.func,
     removeItem: PropTypes.func,
     handleChecklistSubmit: PropTypes.func,
-    updateChecklistValue: PropTypes.func,
     zoom: PropTypes.number,
     currentCoords: PropTypes.object,
     resultLocations: PropTypes.array,
     showPinDetails: PropTypes.bool,
     pinDetails: PropTypes.object,
-    updateCoordinateState: PropTypes.func,
+    updateParentState: PropTypes.func,
   };
 
   render() {
@@ -38,7 +36,6 @@ export default class Container extends PureComponent {
       title,
       handleIngredientRecipesSearch,
       handleRandomRecipeSearch,
-      updateSearchQuery,
       searchQuery,
       ingredientIsLoading,
       randomIsLoading,
@@ -49,13 +46,12 @@ export default class Container extends PureComponent {
       completeItem,
       removeItem,
       handleChecklistSubmit,
-      updateChecklistValue,
       zoom,
       currentCoords,
       resultLocations,
       showPinDetails,
       pinDetails,
-      updateCoordinateState,
+      updateParentState,
     } = this.props;
 
     return (
@@ -64,7 +60,7 @@ export default class Container extends PureComponent {
         {navCard === "fridge" ?
           <Fridge
             handleIngredientRecipesSearch={handleIngredientRecipesSearch}
-            updateSearchQuery={updateSearchQuery}
+            updateParentState={updateParentState}
             searchQuery={searchQuery}
             isLoading={ingredientIsLoading}
             recipes={ingredientRecipes}
@@ -76,13 +72,12 @@ export default class Container extends PureComponent {
             completeItem={completeItem}
             removeItem={removeItem}
             handleSubmit={handleChecklistSubmit}
-            updateValue={updateChecklistValue}
             zoom={zoom}
             currentCoords={currentCoords}
             resultLocations={resultLocations}
             showPinDetails={showPinDetails}
             pinDetails={pinDetails}
-            updateCoordinateState={updateCoordinateState}
+            updateParentState={updateParentState}
           /> : null}
         {navCard === "calendar" ? <Calendar /> : null}
         {navCard === "random" ?

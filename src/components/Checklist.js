@@ -11,7 +11,7 @@ export default class Checklist extends PureComponent {
     completeItem: PropTypes.func,
     removeItem: PropTypes.func,
     handleSubmit: PropTypes.func,
-    updateValue: PropTypes.func,
+    updateParentState: PropTypes.func,
   };
 
   render() {
@@ -21,7 +21,7 @@ export default class Checklist extends PureComponent {
       completeItem,
       removeItem,
       handleSubmit,
-      updateValue,
+      updateParentState,
     } = this.props;
 
     const listItems = items.map((item, index) => (
@@ -49,7 +49,7 @@ export default class Checklist extends PureComponent {
           type="text"
           className="input"
           value={value}
-          onChange={e => updateValue(e)}
+          onChange={e => updateParentState({ groceryListValue: e.target.value })}
           onKeyPress={event => {
             if (event.key === "Enter") {
               handleSubmit(event);

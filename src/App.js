@@ -36,15 +36,13 @@ export default class App extends PureComponent {
     this.handleRandomRecipeSearch = this.handleRandomRecipeSearch.bind(this);
     this.handleNavChange = this.handleNavChange.bind(this);
     this.handleIngredientRecipesSearch = this.handleIngredientRecipesSearch.bind(this);
-    this.updateSearchQuery = this.updateSearchQuery.bind(this);
     this.completeItem = this.completeItem.bind(this);
     this.removeItem = this.removeItem.bind(this);
     this.handleChecklistSubmit = this.handleChecklistSubmit.bind(this);
-    this.updateChecklistValue = this.updateChecklistValue.bind(this);
-    this.updateCoordinateState = this.updateCoordinateState.bind(this);
+    this.updateParentState = this.updateParentState.bind(this);
   }
 
-  updateCoordinateState = (state) => {
+  updateParentState = (state) => {
     this.setState(state);
   };
 
@@ -131,14 +129,6 @@ export default class App extends PureComponent {
       .done(data => { this.setState({ ingredientIsLoading: false, ingredientRecipes: data }); });
   }
 
-  updateSearchQuery(e) {
-    this.setState({ searchQuery: e.target.value })
-  }
-
-  updateChecklistValue(e) {
-    this.setState({ groceryListValue: e.target.value });
-  }
-
   render() {
     const {
       navCard,
@@ -166,7 +156,6 @@ export default class App extends PureComponent {
           <Container
             handleRandomRecipeSearch={this.handleRandomRecipeSearch}
             handleIngredientRecipesSearch={this.handleIngredientRecipesSearch}
-            updateSearchQuery={this.updateSearchQuery}
             title={title}
             navCard={navCard}
             ingredientIsLoading={ingredientIsLoading}
@@ -179,13 +168,12 @@ export default class App extends PureComponent {
             completeItem={this.completeItem}
             removeItem={this.removeItem}
             handleChecklistSubmit={this.handleChecklistSubmit}
-            updateChecklistValue={this.updateChecklistValue}
             zoom={zoom}
             currentCoords={currentCoords}
             resultLocations={resultLocations}
             showPinDetails={showPinDetails}
             pinDetails={pinDetails}
-            updateCoordinateState={this.updateCoordinateState}
+            updateParentState={this.updateParentState}
           />
         </div>
       </div>

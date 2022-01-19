@@ -6,7 +6,7 @@ import "./Fridge.css";
 export default class Fridge extends PureComponent {
   static propTypes = {
     handleIngredientRecipesSearch: PropTypes.func,
-    updateSearchQuery: PropTypes.func,
+    updateParentState: PropTypes.func,
     searchQuery: PropTypes.string,
     isLoading: PropTypes.bool,
     recipes: PropTypes.array,
@@ -15,7 +15,7 @@ export default class Fridge extends PureComponent {
   render() {
     const {
       handleIngredientRecipesSearch,
-      updateSearchQuery,
+      updateParentState,
       isLoading,
       recipes,
       searchQuery,
@@ -33,7 +33,7 @@ export default class Fridge extends PureComponent {
           isLoading={isLoading}
           recipes={recipes}
           searchQuery={searchQuery}
-          updateSearchQuery={updateSearchQuery}
+          updateParentState={updateParentState}
         />
       </div>
     );

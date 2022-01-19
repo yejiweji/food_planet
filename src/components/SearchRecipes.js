@@ -11,7 +11,7 @@ import "./SearchRecipes.css";
 export default class SearchRecipes extends PureComponent {
   static propTypes = {
     handleIngredientRecipesSearch: PropTypes.func,
-    updateSearchQuery: PropTypes.func,
+    updateParentState: PropTypes.func,
     searchQuery: PropTypes.string,
     isLoading: PropTypes.bool,
     recipes: PropTypes.array,
@@ -23,7 +23,7 @@ export default class SearchRecipes extends PureComponent {
       recipes,
       searchQuery,
       handleIngredientRecipesSearch,
-      updateSearchQuery,
+      updateParentState,
     } = this.props;
 
     let cards = null;
@@ -43,7 +43,7 @@ export default class SearchRecipes extends PureComponent {
             type="text"
             as="textarea"
             value={searchQuery}
-            onChange={e => updateSearchQuery(e)}
+            onChange={e => updateParentState({ searchQuery: e.target.value })}
             onKeyPress={event => {
               if (event.key === "Enter") {
                 handleIngredientRecipesSearch();
