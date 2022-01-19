@@ -1,0 +1,33 @@
+.grocery_checklist {
+  padding: 20px 80px;
+  height: calc(100vh - 10vh - 30vh);
+  width: 50%;
+  overflow: scroll;
+  background-image: url(../assets/notepad.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.checklist_title {
+  font-size: 3vmin;
+  margin-bottom: 5px;
+}
+
+.checklist_actions .btn:first-child {
+  margin-right: 5px;
+}
+
+.checklist_item {
+  align-items: center;
+  border-bottom: 1px solid grey;
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 3px 0 3px 10px;
+}
+
+.grocery_checklist input{
+  margin-top: 10px;
+  border: 3px solid pink;
+}

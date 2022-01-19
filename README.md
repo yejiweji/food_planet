@@ -22,7 +22,7 @@ Take a look at https://yejiweji.github.io/food_planet.
 * ReactJS
 * React Bootstrap
 * React Big Calendar
-* Google Maps API
+* Google Maps JavaScript API
 * Spoonacular Food API
 
 ## 🍋 Development

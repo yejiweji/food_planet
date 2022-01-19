@@ -18,13 +18,56 @@ export default class App extends PureComponent {
       randomRecipes: [],
       ingredientRecipes: [],
       searchQuery: "",
+      groceryListValue: "",
+      groceryListItems: [{
+        text: "(Example) buy 2 onions",
+        isCompleted: false
+      }]
     };
 
     this.handleRandomRecipeSearch = this.handleRandomRecipeSearch.bind(this);
     this.handleNavChange = this.handleNavChange.bind(this);
     this.handleIngredientRecipesSearch = this.handleIngredientRecipesSearch.bind(this);
     this.updateSearchQuery = this.updateSearchQuery.bind(this);
+    this.completeItem = this.completeItem.bind(this);
+    this.removeItem = this.removeItem.bind(this);
+    this.handleChecklistSubmit = this.handleChecklistSubmit.bind(this);
+    this.updateChecklistValue = this.updateChecklistValue.bind(this);
   }
+
+  addItem = text => {
+    const { groceryListItems } = this.state;
+  
+    const newItems = [...groceryListItems, { text }];
+    this.setState({ groceryListItems: newItems });
+  };
+
+  completeItem = index => {
+    const { groceryListItems } = this.state;
+
+    const newItems = [...groceryListItems];
+    newItems[index].isCompleted = true;
+    this.setState({ groceryListItems: newItems });
+  };
+
+  removeItem = index => {
+    const { groceryListItems } = this.state;
+
+    const newItems = [...groceryListItems];
+    newItems.splice(index, 1);
+    this.setState({ groceryListItems: newItems });
+  };
+
+  handleChecklistSubmit = e => {
+    const { groceryListValue } = this.state;
+    e.preventDefault();
+
+    if (!groceryListValue) {
+      return;
+    }
+    this.addItem(groceryListValue);
+    this.setState({ groceryListValue: "" });
+  };
 
   handleRandomRecipeSearch() {
     this.setState({ randomIsLoading: true });
@@ -79,6 +122,10 @@ export default class App extends PureComponent {
     this.setState({ searchQuery: e.target.value })
   }
 
+  updateChecklistValue(e) {
+    this.setState({ groceryListValue: e.target.value });
+  }
+
   render() {
     const {
       navCard,
@@ -89,6 +136,8 @@ export default class App extends PureComponent {
       randomRecipes,
       ingredientRecipes,
       searchQuery,
+      groceryListValue,
+      groceryListItems,
     } = this.state;
   
     return (
@@ -107,6 +156,12 @@ export default class App extends PureComponent {
             randomRecipes={randomRecipes}
             ingredientRecipes={ingredientRecipes}
             searchQuery={searchQuery}
+            groceryListValue={groceryListValue}
+            groceryListItems={groceryListItems}
+            completeItem={this.completeItem}
+            removeItem={this.removeItem}
+            handleChecklistSubmit={this.handleChecklistSubmit}
+            updateChecklistValue={this.updateChecklistValue}
           />
         </div>
       </div>

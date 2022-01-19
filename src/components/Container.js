@@ -19,6 +19,12 @@ export default class Container extends PureComponent {
     randomRecipes: PropTypes.array,
     ingredientRecipes: PropTypes.array,
     searchQuery: PropTypes.string,
+    groceryListValue: PropTypes.string,
+    groceryListItems: PropTypes.array,
+    completeItem: PropTypes.func,
+    removeItem: PropTypes.func,
+    handleChecklistSubmit: PropTypes.func,
+    updateChecklistValue: PropTypes.func,
   };
 
   render() {
@@ -33,6 +39,12 @@ export default class Container extends PureComponent {
       randomIsLoading,
       ingredientRecipes,
       randomRecipes,
+      groceryListValue,
+      groceryListItems,
+      completeItem,
+      removeItem,
+      handleChecklistSubmit,
+      updateChecklistValue,
     } = this.props;
 
     return (
@@ -46,7 +58,15 @@ export default class Container extends PureComponent {
             isLoading={ingredientIsLoading}
             recipes={ingredientRecipes}
           /> : null}
-        {navCard === "grocery" ? <Grocery /> : null}
+        {navCard === "grocery" ?
+          <Grocery
+            value={groceryListValue}
+            items={groceryListItems}
+            completeItem={completeItem}
+            removeItem={removeItem}
+            handleSubmit={handleChecklistSubmit}
+            updateValue={updateChecklistValue}
+          /> : null}
         {navCard === "calendar" ? <Calendar /> : null}
         {navCard === "random" ?
           <Random
