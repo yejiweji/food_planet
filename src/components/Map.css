@@ -1,4 +1,7 @@
-.grocery_container .map {
-  border: 3px solid pink;
-  width: 50%;
+.grocery_map button {
+  text-decoration: none;
+  border: none;
+  padding: 0;
+  font-size: 3vmin;
+  background: none;
 }

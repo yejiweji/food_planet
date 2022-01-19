@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { BsCalendar2Check } from "react-icons/bs"
 import { MdOutlineLocalGroceryStore } from "react-icons/md";
 import { RiFridgeLine, RiMagicLine } from "react-icons/ri";
-
 import "./NavBar.css";
 
 export default class NavBar extends PureComponent {

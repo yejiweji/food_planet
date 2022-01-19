@@ -48,7 +48,6 @@ export default class Checklist extends PureComponent {
           aria-describedby="grocery-list-input-box"
           type="text"
           className="input"
-          aria-describedby="text"
           value={value}
           onChange={e => updateValue(e)}
           onKeyPress={event => {

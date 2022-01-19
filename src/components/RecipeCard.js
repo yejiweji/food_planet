@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import $ from 'jquery';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
 import "./RecipeCard.css";
 
 export default class RecipeCard extends PureComponent {

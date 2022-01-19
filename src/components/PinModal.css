@@ -1,0 +1,40 @@
+.pin_modal {
+  position: absolute;
+  top: 10vh;
+  right: 0;
+  width: 25vw;
+  height: calc(100vh - 10vh);
+  background: pink;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+  border-left: 5px dashed white;
+  padding: 60px 30px 20px 30px;
+  overflow: scroll;
+  word-break: normal;
+  font-weight: 500;
+  font-size: 1.7vmin;
+}
+
+.pin_modal img {
+  height: 30px;
+  display: block;
+  padding: 5px;
+}
+
+.pin_modal .place_name {
+  font-size: 2vmin;
+  font-weight: 700;
+}
+
+.place_name, .place_address, .place_hours {
+  padding: 7px 0;
+}
+
+.pin_modal .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 5px 10px;
+  font-size: 4vmin;
+  color: #9e1d64;
+}

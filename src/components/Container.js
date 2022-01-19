@@ -4,7 +4,6 @@ import Fridge from "./Fridge";
 import Grocery from "./Grocery";
 import Calendar from "./Calendar";
 import Random from "./Random";
-
 import "./Container.css";
 
 export default class Container extends PureComponent {
@@ -25,6 +24,12 @@ export default class Container extends PureComponent {
     removeItem: PropTypes.func,
     handleChecklistSubmit: PropTypes.func,
     updateChecklistValue: PropTypes.func,
+    zoom: PropTypes.number,
+    currentCoords: PropTypes.object,
+    resultLocations: PropTypes.array,
+    showPinDetails: PropTypes.bool,
+    pinDetails: PropTypes.object,
+    updateCoordinateState: PropTypes.func,
   };
 
   render() {
@@ -45,6 +50,12 @@ export default class Container extends PureComponent {
       removeItem,
       handleChecklistSubmit,
       updateChecklistValue,
+      zoom,
+      currentCoords,
+      resultLocations,
+      showPinDetails,
+      pinDetails,
+      updateCoordinateState,
     } = this.props;
 
     return (
@@ -66,6 +77,12 @@ export default class Container extends PureComponent {
             removeItem={removeItem}
             handleSubmit={handleChecklistSubmit}
             updateValue={updateChecklistValue}
+            zoom={zoom}
+            currentCoords={currentCoords}
+            resultLocations={resultLocations}
+            showPinDetails={showPinDetails}
+            pinDetails={pinDetails}
+            updateCoordinateState={updateCoordinateState}
           /> : null}
         {navCard === "calendar" ? <Calendar /> : null}
         {navCard === "random" ?

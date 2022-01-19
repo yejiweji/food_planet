@@ -12,6 +12,12 @@ export default class Grocery extends PureComponent {
     removeItem: PropTypes.func,
     handleSubmit: PropTypes.func,
     updateValue: PropTypes.func,
+    zoom: PropTypes.number,
+    currentCoords: PropTypes.object,
+    resultLocations: PropTypes.array,
+    showPinDetails: PropTypes.bool,
+    pinDetails: PropTypes.object,
+    updateCoordinateState: PropTypes.func,
   };
 
   render() {
@@ -22,6 +28,12 @@ export default class Grocery extends PureComponent {
       removeItem,
       handleSubmit,
       updateValue,
+      zoom,
+      currentCoords,
+      resultLocations,
+      showPinDetails,
+      pinDetails,
+      updateCoordinateState,
     } = this.props;
 
     return (
@@ -40,7 +52,14 @@ export default class Grocery extends PureComponent {
             handleSubmit={handleSubmit}
             updateValue={updateValue}
           />
-          <Map />
+          <Map
+            zoom={zoom}
+            currentCoords={currentCoords}
+            resultLocations={resultLocations}
+            showPinDetails={showPinDetails}
+            pinDetails={pinDetails}
+            updateCoordinateState={updateCoordinateState}
+          />
         </div>
       </div>
     );

@@ -22,7 +22,15 @@ export default class App extends PureComponent {
       groceryListItems: [{
         text: "(Example) buy 2 onions",
         isCompleted: false
-      }]
+      }],
+      zoom: 8,
+      currentCoords: {
+        lat: 45.55,
+        lng: -74.01,
+      },
+      resultLocations: [],
+      pinDetails: {},
+      showPinDetails: false,
     };
 
     this.handleRandomRecipeSearch = this.handleRandomRecipeSearch.bind(this);
@@ -33,7 +41,12 @@ export default class App extends PureComponent {
     this.removeItem = this.removeItem.bind(this);
     this.handleChecklistSubmit = this.handleChecklistSubmit.bind(this);
     this.updateChecklistValue = this.updateChecklistValue.bind(this);
+    this.updateCoordinateState = this.updateCoordinateState.bind(this);
   }
+
+  updateCoordinateState = (state) => {
+    this.setState(state);
+  };
 
   addItem = text => {
     const { groceryListItems } = this.state;
@@ -138,6 +151,11 @@ export default class App extends PureComponent {
       searchQuery,
       groceryListValue,
       groceryListItems,
+      zoom,
+      currentCoords,
+      resultLocations,
+      showPinDetails,
+      pinDetails,
     } = this.state;
   
     return (
@@ -162,6 +180,12 @@ export default class App extends PureComponent {
             removeItem={this.removeItem}
             handleChecklistSubmit={this.handleChecklistSubmit}
             updateChecklistValue={this.updateChecklistValue}
+            zoom={zoom}
+            currentCoords={currentCoords}
+            resultLocations={resultLocations}
+            showPinDetails={showPinDetails}
+            pinDetails={pinDetails}
+            updateCoordinateState={this.updateCoordinateState}
           />
         </div>
       </div>

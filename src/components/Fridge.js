@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import SearchRecipes from "./SearchRecipes";
 import "./Fridge.css";
 
-
 export default class Fridge extends PureComponent {
   static propTypes = {
     handleIngredientRecipesSearch: PropTypes.func,
