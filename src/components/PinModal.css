@@ -30,6 +30,20 @@
   padding: 7px 0;
 }
 
+.place_hours .open_now,
+.place_hours .closed_now {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.open_now {
+  color: #46942a;
+}
+
+.closed_now {
+  color: #bb2d3b;
+}
+
 .pin_modal .btn {
   position: absolute;
   right: 0;

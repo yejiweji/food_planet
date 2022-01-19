@@ -67,7 +67,9 @@ export default class Map extends PureComponent {
             showPinDetails: true,
           })}
         >
-          &#128204;
+          {/* &#128204; */}
+          {/* 📍 */}
+          🔥
         </button>
       )
     });
