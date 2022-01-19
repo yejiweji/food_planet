@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
-import $ from 'jquery';
 import PropTypes from "prop-types";
+import $ from 'jquery';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -11,7 +11,7 @@ export default class RecipeCard extends PureComponent {
     super(props);
 
     this.state = {
-      isLoading: false,
+      isLoadingUrl: false,
     };
 
     this.handleClick = this.handleDrilldown.bind(this);
@@ -22,14 +22,14 @@ export default class RecipeCard extends PureComponent {
   };
 
   handleDrilldown(id) {
-    this.setState({ isLoading: true});
+    this.setState({ isLoadingUrl: true});
 
     const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
     const url = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=false`;
 
     $.getJSON(url)
       .done(data => {
-        this.setState({ isLoading: false });
+        this.setState({ isLoadingUrl: false });
         window.open(data.sourceUrl, "_blank");
       });
   }
@@ -69,7 +69,7 @@ export default class RecipeCard extends PureComponent {
       // instructions,
       // spoonacularSourceUrl,
     } = this.props.recipe;
-    const { isLoading } = this.state;
+    const { isLoadingUrl } = this.state;
 
     return (
       <div className="recipe_card">
@@ -79,7 +79,12 @@ export default class RecipeCard extends PureComponent {
             <Card.Title>{title}</Card.Title>
             <div className="recipe_description" dangerouslySetInnerHTML={{ __html: summary }}></div>
             {!sourceUrl ?
-              <Button variant="outline-info" onClick={() => this.handleDrilldown(id)}>{isLoading ? 'Loading...' : 'See recipe'}</Button>
+              <Button
+                variant="outline-info"
+                onClick={() => this.handleDrilldown(id)}
+              >
+                {isLoadingUrl ? 'Loading...' : 'See recipe'}
+              </Button>
               : <Button variant="outline-info" href={sourceUrl} target="_blank">See recipe</Button>
             }
           </Card.Body>

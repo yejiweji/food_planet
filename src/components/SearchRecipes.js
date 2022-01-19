@@ -1,6 +1,5 @@
-
-import React, { Component } from "react";
-import $ from 'jquery';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -9,33 +8,23 @@ import EmptyResults from "./EmptyResults";
 import RecipeCard from "./RecipeCard";
 import "./SearchRecipes.css";
 
-export default class SearchRecipes extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: false,
-      recipes: [],
-      searchQuery: "",
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    const { searchQuery } = this.state;
-
-    this.setState({ isLoading: true });
-
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${searchQuery}`;
-
-    $.getJSON(url)
-      .done(data => { this.setState({ isLoading: false, recipes: data }); });
-  }
+export default class SearchRecipes extends PureComponent {
+  static propTypes = {
+    handleIngredientRecipesSearch: PropTypes.func,
+    updateSearchQuery: PropTypes.func,
+    searchQuery: PropTypes.string,
+    isLoading: PropTypes.bool,
+    recipes: PropTypes.array,
+  };
 
   render() {
-    const { isLoading, recipes, searchQuery } = this.state;
+    const {
+      isLoading,
+      recipes,
+      searchQuery,
+      handleIngredientRecipesSearch,
+      updateSearchQuery,
+    } = this.props;
 
     let cards = null;
     if (recipes) {
@@ -54,17 +43,17 @@ export default class SearchRecipes extends Component {
             type="text"
             as="textarea"
             value={searchQuery}
-            onChange={e => this.setState({ searchQuery: e.target.value })}
+            onChange={e => updateSearchQuery(e)}
             onKeyPress={event => {
               if (event.key === "Enter") {
-                this.handleClick();
+                handleIngredientRecipesSearch();
               }
             }}
           />
           <Button
             variant="info"
             id="button-addon2"
-            onClick={!isLoading ? this.handleClick : null}
+            onClick={!isLoading ? handleIngredientRecipesSearch : null}
           >
             {isLoading ?
               <span>

@@ -1,40 +1,25 @@
 
-import React, { Component } from "react";
-import $ from 'jquery';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import LoadingGlobe from "./LoadingGlobe";
 import RecipeCard from "./RecipeCard";
 import "./RandomRecipe.css";
 
-export default class RandomRecipe extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-      recipes: [],
-    };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState({ isLoading: true });
-
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-    const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`;
-
-    $.getJSON(url)
-      .done(data => { this.setState({ isLoading: false, recipes: data.recipes }); });
-  }
+export default class RandomRecipe extends PureComponent {
+  static propTypes = {
+    handleRandomRecipeSearch: PropTypes.func,
+    isLoading: PropTypes.bool,
+    recipes: PropTypes.array,
+  };
 
   render() {
-    const { isLoading, recipes } = this.state;
+    const { isLoading, recipes, handleRandomRecipeSearch } = this.props;
 
     let cards = null;
     if (recipes) {
       cards = recipes.map((item, i) => (
-        <RecipeCard key={item.id} recipe={item} />
+        <RecipeCard key={item.id} recipe={item} isLoading={isLoading} />
       ));
     }
 
@@ -43,7 +28,7 @@ export default class RandomRecipe extends Component {
         <Button
           variant="info"
           id="button-addon2"
-          onClick={this.handleClick}
+          onClick={handleRandomRecipeSearch}
           size="lg"
         >
           ✨ Get inspired ✨
