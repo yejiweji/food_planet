@@ -1,5 +1,5 @@
 .grocery_checklist {
-  padding: 3vh 6vw;
+  padding: 3vh 2vw 3vh 6vw;
   height: calc(100vh - 10vh - 30vh);
   width: 50%;
   overflow: scroll;
@@ -12,6 +12,10 @@
 .checklist_title {
   font-size: 3vmin;
   margin-bottom: 5px;
+}
+
+.checklist_actions {
+  text-align: right;
 }
 
 .checklist_actions .btn {
