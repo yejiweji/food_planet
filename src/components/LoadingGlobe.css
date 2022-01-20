@@ -9,7 +9,7 @@
   width: 30vh;
   box-shadow: 0 0 10px #9b94a8;
   animation: glow 3s ease-in-out infinite alternate;
-  margin: 77px auto 0;
+  margin: 25px auto 0;
   z-index: 10;
 }
  
