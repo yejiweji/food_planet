@@ -1,7 +1,18 @@
-.calendar_container {}
+.calendar_container {
+  text-align: center;
+}
 
 .calendar_wrapper {
-  min-height: 500px;
   padding: 10px;
-  background: #e1ceec;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+.calendar_tips {
+  text-align: left;
+  font-size: 1.7vmin;
+  font-style: italic;
+  font-weight: 500;
+  padding-top: 20px;
+  margin-bottom: 15px;
 }

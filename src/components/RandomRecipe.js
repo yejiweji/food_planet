@@ -26,14 +26,24 @@ export default class RandomRecipe extends PureComponent {
     return (
       <div className="random_recipe_container">
         <Button
-          variant="info"
+          variant="outline-info"
           id="button-addon2"
           onClick={handleRandomRecipeSearch}
           size="lg"
         >
           ✨ Get inspired ✨
         </Button>
-        { isLoading ? <LoadingGlobe /> : <div className="recipes">{ cards }</div>}
+        <div className="crystal_wrapper">
+          { isLoading ?
+            <Button
+              variant="link"
+              onClick={handleRandomRecipeSearch}
+              size="lg"
+            >
+              <LoadingGlobe />
+            </Button> : <div className="recipes">{ cards }</div>
+          }
+        </div>
       </div>
     );
   }

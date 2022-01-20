@@ -28,6 +28,9 @@ export default class Container extends PureComponent {
     showPinDetails: PropTypes.bool,
     pinDetails: PropTypes.object,
     updateParentState: PropTypes.func,
+    handleMealPlanSearch: PropTypes.func,
+    mealPreps: PropTypes.object,
+    mealPrepIsLoading: PropTypes.bool,
   };
 
   render() {
@@ -52,6 +55,9 @@ export default class Container extends PureComponent {
       showPinDetails,
       pinDetails,
       updateParentState,
+      handleMealPlanSearch,
+      mealPreps,
+      mealPrepIsLoading,
     } = this.props;
 
     return (
@@ -79,7 +85,12 @@ export default class Container extends PureComponent {
             pinDetails={pinDetails}
             updateParentState={updateParentState}
           /> : null}
-        {navCard === "calendar" ? <Calendar /> : null}
+        {navCard === "calendar" ?
+          <Calendar
+            handleMealPlanSearch={handleMealPlanSearch}
+            mealPreps={mealPreps}
+            mealPrepIsLoading={mealPrepIsLoading}
+          /> : null}
         {navCard === "random" ?
           <Random
             handleRandomRecipeSearch={handleRandomRecipeSearch}

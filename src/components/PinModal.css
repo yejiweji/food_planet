@@ -30,6 +30,13 @@
   padding: 7px 0;
 }
 
+.place_hours {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  border: 3px dotted white;
+}
+
 .place_hours .open_now,
 .place_hours .closed_now {
   text-transform: uppercase;

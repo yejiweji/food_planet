@@ -31,6 +31,8 @@ export default class App extends PureComponent {
       resultLocations: [],
       pinDetails: {},
       showPinDetails: false,
+      mealPreps: [],
+      mealPrepIsLoading: false,
     };
 
     this.handleRandomRecipeSearch = this.handleRandomRecipeSearch.bind(this);
@@ -40,6 +42,7 @@ export default class App extends PureComponent {
     this.removeItem = this.removeItem.bind(this);
     this.handleChecklistSubmit = this.handleChecklistSubmit.bind(this);
     this.updateParentState = this.updateParentState.bind(this);
+    this.handleMealPlanSearch = this.handleMealPlanSearch.bind(this);
   }
 
   updateParentState = (state) => {
@@ -82,9 +85,7 @@ export default class App extends PureComponent {
 
   handleRandomRecipeSearch() {
     this.setState({ randomIsLoading: true });
-
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-    const url = `https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=1`;
+    const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&number=1`;
 
     $.getJSON(url)
       .done(data => { this.setState({ randomIsLoading: false, randomRecipes: data.recipes }); });
@@ -121,12 +122,18 @@ export default class App extends PureComponent {
     const { searchQuery } = this.state;
 
     this.setState({ ingredientIsLoading: true });
-
-    const apiKey = process.env.REACT_APP_SPOONACULAR_API_KEY;
-    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${searchQuery}`;
+    const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&ingredients=${searchQuery}`;
 
     $.getJSON(url)
       .done(data => { this.setState({ ingredientIsLoading: false, ingredientRecipes: data }); });
+  }
+
+  handleMealPlanSearch() {
+    this.setState({ mealPrepIsLoading: true });
+    const url = `https://api.spoonacular.com/mealplanner/generate?apiKey=${process.env.REACT_APP_SPOONACULAR_API_KEY}&timeFrame=week`;
+
+    $.getJSON(url)
+      .done(data => { this.setState({ mealPrepIsLoading: false, mealPreps: data.week }); });
   }
 
   render() {
@@ -146,6 +153,8 @@ export default class App extends PureComponent {
       resultLocations,
       showPinDetails,
       pinDetails,
+      mealPrepIsLoading,
+      mealPreps,
     } = this.state;
   
     return (
@@ -174,6 +183,9 @@ export default class App extends PureComponent {
             showPinDetails={showPinDetails}
             pinDetails={pinDetails}
             updateParentState={this.updateParentState}
+            handleMealPlanSearch={this.handleMealPlanSearch}
+            mealPrepIsLoading={mealPrepIsLoading}
+            mealPreps={mealPreps}
           />
         </div>
       </div>

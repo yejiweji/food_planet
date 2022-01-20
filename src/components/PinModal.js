@@ -16,6 +16,7 @@ export default class PinModal extends PureComponent {
       icon,
       name,
       opening_hours,
+      rating,
     } = details;
 
     return (
@@ -24,6 +25,9 @@ export default class PinModal extends PureComponent {
         <img src={icon} alt="place-icon" />
         <div className="place_name">{name}</div>
         <div className="place_address">{formatted_address}</div>
+        <div className="place_rating">
+          Rating: {"❤️".repeat(rating)} ({rating})
+        </div>
         <div className="place_hours">
           {opening_hours.open_now ?
             <span className="open_now">✅ Open now</span>
