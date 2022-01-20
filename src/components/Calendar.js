@@ -109,10 +109,10 @@ export default class Calendar extends PureComponent {
     return (
       <div className="calendar_container">
         <div className="container_description">
-          Do you wish you had a better meal plan for each day of the week?
-          Are you tired of trying to meal plan all on your own?
-          Instead of worrying about what to cook every meal, let's generate this week's meal plan in advance.
-          Use the calendar below to see what you'll be eating this week:
+          Do you wish you had better meals planned for the week?
+          Are you tired of trying to plan them all on your own?
+          Instead of worrying about what to cook at every meal, let's generate this week's meal plan in advance.
+          Use the calendar below to see what you will be cooking this week:
         </div>
         <Button
           variant="outline-info"
