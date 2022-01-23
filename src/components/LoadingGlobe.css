@@ -1,3 +1,7 @@
+.crystal_wrapper {
+  padding: 5vh 0;
+}
+
 .loading_crystal {
   font-size: 20vmin;
 }
@@ -7,24 +11,36 @@
   border-radius: 50%;
   height: 30vh;
   width: 30vh;
-  box-shadow: 0 0 10px #9b94a8;
-  animation: glow 3s ease-in-out infinite alternate;
-  margin: 25px auto 0;
+  box-shadow: 0 0 1vw #9b94a8;
+  animation: glow 2s ease-in-out infinite alternate;
+  margin: 3vh auto 0;
   z-index: 10;
 }
  
 @keyframes glow {
   from {
-    box-shadow: 0 -10px 30px #6bd6e2,
-    0 -5px 25px #a27dc6,
-    0 -5px 30px #ac87d1,
-    0 -5px 35px #6bd6e2;
+    box-shadow: 0 -0.5vw 0.8vw #6bd6e2,
+    0 -0.5vw 1vw #a27dc6,
+    0 -0.5vw 1.5vw #ac87d1,
+    0 -0.5vw 1.75vw #6bd6e2;
     background: radial-gradient(circle, rgb(246, 234, 252) 0%, rgb(78, 211, 235) 100%);
   }
   to {
-    box-shadow: 0 -5px 50px #d4f1f4,
-    0 -5px 60px #ac87d1,
-    0 -5px 70px #a27dc6,
-    0 -5px 80px #ab85e7;
+    box-shadow: 0 -0.5vw 6vw #d4f1f4,
+    0 -0.5vw 6.5vw #ac87d1,
+    0 -0.5vw 6.75vw #a27dc6,
+    0 -0.5vw 7vw #ab85e7;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .crystal_wrapper {
+    padding: 0;
+    margin-top: 2.5vh;
+  }
+
+  .crystal {
+    height: 20vh;
+    width: 20vh;
   }
 }

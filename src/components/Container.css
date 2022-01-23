@@ -1,25 +1,31 @@
 .app_container {
   width: calc(100vw - 15vw);
   height: calc(100vh - 10vh);
-  padding: 30px 50px;
+  padding: 3vh 3vw;
   overflow: scroll;
 }
 
 .container_title {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 6vh;
   text-align: center;
   font-size: 5vmin;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
   color: #f48fb1;
-  text-shadow: -4px 4px #7e57c2,
-               -8px 8px #26c6da;
+  text-shadow: -0.6vw 0.6vw #7e57c2,
+               -0.9vw 0.9vw #26c6da;
 }
 
 .container_description {
   text-align: center;
-  margin: 20px auto;
+  margin: 4vh auto;
   font-weight: 500;
   color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+  .app_container {
+    padding: 3vh 3vw;
+  }
 }

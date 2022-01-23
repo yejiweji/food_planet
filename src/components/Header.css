@@ -10,7 +10,7 @@
 }
 
 .app_logo {
-  margin: 10px;
+  margin: 2vh 1vw;
 }
 
 .logo_center {
@@ -25,7 +25,7 @@
 
 .app_header p {
   margin: auto 0;
-  text-shadow: -4px 3px #7e57c2;
+  text-shadow: -0.4vw 0.4vw #7e57c2;
   font-weight: 700;
 }
 

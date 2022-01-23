@@ -15,8 +15,8 @@ export default class App extends PureComponent {
       cardSelected: "fridge",
       ingredientIsLoading: false,
       randomIsLoading: true,
-      randomRecipes: [],
-      ingredientRecipes: [],
+      randomRecipes: null,
+      ingredientRecipes: null,
       searchQuery: "",
       groceryListValue: "",
       groceryListItems: [{
@@ -31,7 +31,7 @@ export default class App extends PureComponent {
       resultLocations: [],
       pinDetails: {},
       showPinDetails: false,
-      mealPreps: [],
+      mealPreps: {},
       mealPrepIsLoading: false,
     };
 

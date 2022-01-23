@@ -4,7 +4,7 @@
 }
 
 .recipe_card {
-  padding: 10px;
+  padding: 1vh 1vw;
   width: calc(100% / 3);
   box-sizing: border-box;
 }
@@ -15,6 +15,6 @@
 
 .recipe_card .recipe_description {
   font-size: 1.2vmin;
-  margin: 10px 0 20px 0;
+  margin: 2vh 0 2.3vh;
   font-weight: 500;
 }

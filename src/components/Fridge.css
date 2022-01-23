@@ -2,5 +2,11 @@
   margin: auto;
 }
 .fridge_container .mb-3 textarea {
-  border: 2px solid pink;
+  border: 0.4vw solid pink;
+}
+
+@media only screen and (max-width: 600px) {
+  .fridge_container .mb-3 textarea {
+    font-size: 4vw;
+  }
 }

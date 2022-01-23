@@ -2,37 +2,33 @@
   width: 60%;
 }
 
-@media only screen and (max-width: 975px) {
-  .random_recipe_container .recipe_card {
-    width: 80%;
-  }
-}
-
 .random_recipe_container .recipe_card {
   margin: auto;
 }
 
 .random_recipe_container .recipe_card .card {
   width: 100%;
-  box-shadow: 0 0 10px #9b94a8;
+  box-shadow: 0 0 1vw #9b94a8;
   animation: card_glow 3s ease-in-out infinite alternate;
 }
- 
+
 @keyframes card_glow {
   from {
-    box-shadow: 0 -10px 30px #6bd6e2,
-    0 -5px 10px #a27dc6,
-    0 -5px 15px #ac87d1,
-    0 -5px 20px #6bd6e2;
+    box-shadow: 0 -0.5vw 1.75vw #6bd6e2,
+    0 -0.5vw 2vw #a27dc6,
+    0 -0.5vw 2.25vw #ac87d1,
+    0 -0.5vw 2.5vw #6bd6e2;
   }
   to {
-    box-shadow: 0 -5px 50px #d4f1f4,
-    0 -5px 0px #ac87d1,
-    0 -5px 10px #a27dc6,
-    0 -5px 20px #ab85e7;
+    box-shadow: 0 -0.5vw 2vw #d4f1f4,
+    0 -0.5vw 2.1vw #ac87d1,
+    0 -0.5vw 2.2vw #a27dc6,
+    0 -0.5vw 2.6vw #ab85e7;
   }
 }
 
-.crystal_wrapper {
-  padding: 5vh 0;
+@media only screen and (max-width: 600px) {
+  .random_recipe_container .recipe_card {
+    width: 80%;
+  }
 }

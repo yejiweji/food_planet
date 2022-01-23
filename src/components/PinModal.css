@@ -7,8 +7,8 @@
   background: pink;
   border-top-left-radius: 10%;
   border-bottom-left-radius: 10%;
-  border-left: 5px dashed white;
-  padding: 60px 30px 20px 30px;
+  border-left: 0.5vw dashed white;
+  padding: 5.5vh 3vw;
   overflow: scroll;
   word-break: normal;
   font-weight: 500;
@@ -16,9 +16,9 @@
 }
 
 .pin_modal img {
-  height: 30px;
+  height: 2.5vw;
   display: block;
-  padding: 5px;
+  padding: 0.5vw;
 }
 
 .pin_modal .place_name {
@@ -27,14 +27,14 @@
 }
 
 .place_name, .place_address, .place_hours {
-  padding: 7px 0;
+  padding: 1.3vh 0;
 }
 
 .place_hours {
   text-align: center;
-  margin-top: 20px;
-  padding: 10px;
-  border: 3px dotted white;
+  margin-top: 3vh;
+  padding: 2vh 1vw;
+  border: 0.2vw dotted white;
 }
 
 .place_hours .open_now,
@@ -55,7 +55,14 @@
   position: absolute;
   right: 0;
   top: 0;
-  margin: 5px 10px;
+  margin: 1vh 1vw;
   font-size: 4vmin;
   color: #9e1d64;
+}
+
+@media only screen and (max-width: 600px) {
+  .pin_modal {
+    width: 60vw;
+    padding: 5vh 7vw;
+  }
 }

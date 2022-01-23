@@ -68,7 +68,7 @@ export default class SearchRecipes extends PureComponent {
               </span> : <span>Go find</span>}
           </Button>
         </InputGroup>
-        { recipes ? <div className="recipes">{ cards }</div> : <EmptyResults />}
+        { recipes && recipes.length == 0 ? <EmptyResults /> : <div className="recipes">{ cards }</div>}
       </div>
     );
   }

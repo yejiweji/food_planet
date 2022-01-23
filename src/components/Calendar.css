@@ -3,8 +3,8 @@
 }
 
 .calendar_wrapper {
-  padding: 10px;
-  margin: 10px 0;
+  padding: 1vh 1vw;
+  margin: 2vh 0;
   font-weight: 500;
 }
 
@@ -13,6 +13,18 @@
   font-size: 1.7vmin;
   font-style: italic;
   font-weight: 500;
-  padding-top: 20px;
-  margin-bottom: 15px;
+  padding-top: 2.5vh;
+  margin-bottom: 2vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .rbc-btn-group {
+    white-space: normal;
+    margin: 1.5vh 0;
+  }
+
+  .calendar_tips {
+    font-size: 3.5vmin;
+    padding-top: 0;
+  }
 }

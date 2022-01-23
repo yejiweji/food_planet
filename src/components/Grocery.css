@@ -1,4 +1,5 @@
 .grocery_container .grocery_content_wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }

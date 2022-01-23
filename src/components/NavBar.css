@@ -11,7 +11,7 @@
   height: calc((100vh - 10vh) / 4);
   background: #c9dac9;
   line-height: calc((100vh - 10vh) / 4);
-  border-bottom: 5px solid white;
+  border-bottom: 0.7vw solid white;
   opacity: 0.6;
 }
 

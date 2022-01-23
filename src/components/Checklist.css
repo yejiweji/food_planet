@@ -6,12 +6,12 @@
   background-image: url(../assets/notepad.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  border-right: 8px dashed pink;
+  border-right: 0.7vw dashed pink;
 }
 
 .checklist_title {
   font-size: 3vmin;
-  margin-bottom: 5px;
+  margin-bottom: 0.7vh;
 }
 
 .checklist_actions {
@@ -19,20 +19,33 @@
 }
 
 .checklist_actions .btn {
-  margin: 2px;
+  margin: 0.1vh 0.1vw;
 }
 
 .checklist_item {
   align-items: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 0.1vh solid grey;
   display: flex;
-  font-size: 12px;
+  font-size: 1.2vw;
   justify-content: space-between;
-  margin-bottom: 6px;
-  padding: 3px 0 3px 10px;
+  margin-bottom: 0.3vh;
+  padding: 0.4vh 0 0.4vh 1vw;
 }
 
 .grocery_checklist input{
-  margin-top: 10px;
-  border: 3px solid pink;
+  margin-top: 1vh;
+  border: 0.3vw solid pink;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .grocery_checklist {
+    width: 100%;
+    border: none;
+    padding: 3vh 2vw 3vh 11vw;
+    margin-bottom: 2vh;
+  }
+  .checklist_item {
+    padding: 0;
+  }
 }
