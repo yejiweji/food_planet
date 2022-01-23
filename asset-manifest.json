@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/food_planet/static/css/main.a86497e7.css",
-    "main.js": "/food_planet/static/js/main.17bbd553.js",
+    "main.css": "/food_planet/static/css/main.9ce9e903.css",
+    "main.js": "/food_planet/static/js/main.6e254197.js",
     "static/js/787.5773d86e.chunk.js": "/food_planet/static/js/787.5773d86e.chunk.js",
     "static/media/logo.png": "/food_planet/static/media/logo.4a803a802e88d2ddb3aa.png",
     "index.html": "/food_planet/index.html",
-    "main.a86497e7.css.map": "/food_planet/static/css/main.a86497e7.css.map",
-    "main.17bbd553.js.map": "/food_planet/static/js/main.17bbd553.js.map",
+    "main.9ce9e903.css.map": "/food_planet/static/css/main.9ce9e903.css.map",
+    "main.6e254197.js.map": "/food_planet/static/js/main.6e254197.js.map",
     "787.5773d86e.chunk.js.map": "/food_planet/static/js/787.5773d86e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a86497e7.css",
-    "static/js/main.17bbd553.js"
+    "static/css/main.9ce9e903.css",
+    "static/js/main.6e254197.js"
   ]
 }
