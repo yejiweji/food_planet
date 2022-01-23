@@ -4,5 +4,11 @@
 
 .random_container button {
   font-weight: 700;
-  margin: 3vh 0 1vh;
+  margin: 1vh 0 2vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .random_container button {
+    margin: 1vh 0 3.5vh;
+  }
 }

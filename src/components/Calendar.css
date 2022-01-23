@@ -17,6 +17,10 @@
   margin-bottom: 2vh;
 }
 
+.calendar_container .btn-lg {
+  font-size: 1.5vw;
+}
+
 @media only screen and (max-width: 600px) {
   .rbc-btn-group {
     white-space: normal;
@@ -26,5 +30,9 @@
   .calendar_tips {
     font-size: 3.5vmin;
     padding-top: 0;
+  }
+
+  .calendar_container .btn-lg {
+    font-size: 4.5vw;
   }
 }

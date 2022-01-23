@@ -36,6 +36,11 @@ export default class RecipeCard extends PureComponent {
   render() {
     const {
       id,
+      title,
+      sourceUrl,
+      image,
+      summary,
+      // All other available fields:
       // vegetarian,
       // vegan,
       // glutenFree,
@@ -54,13 +59,9 @@ export default class RecipeCard extends PureComponent {
       // license,
       // sourceName,
       // pricePerServing,
-      title,
       // readyInMinutes,
       // servings,
-      sourceUrl,
-      image,
       // imageType,
-      summary,
       // cuisines,
       // dishTypes,
       // diets,
